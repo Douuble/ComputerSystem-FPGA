@@ -1,0 +1,12 @@
+vhdl xil_defaultlib  \
+"../../../bd/design_1/ipshared/edb9/src/ADAU1761_interface.vhd" \
+"../../../bd/design_1/ipshared/edb9/src/adau1761_configuraiton_data.vhd" \
+"../../../bd/design_1/ipshared/edb9/src/adau1761_izedboard.vhd" \
+"../../../bd/design_1/ipshared/edb9/src/audio_top.vhd" \
+"../../../bd/design_1/ipshared/edb9/src/clocking.vhd" \
+"../../../bd/design_1/ipshared/edb9/src/i2c.vhd" \
+"../../../bd/design_1/ipshared/edb9/src/i2s_data_interface.vhd" \
+"../../../bd/design_1/ipshared/edb9/src/i3c2.vhd" \
+"../../../bd/design_1/ip/design_1_rst_ps7_0_100M_0/sim/design_1_rst_ps7_0_100M_0.vhd" \
+
+nosort

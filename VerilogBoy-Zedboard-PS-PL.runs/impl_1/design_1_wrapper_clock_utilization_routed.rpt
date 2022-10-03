@@ -1,0 +1,690 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Fri Jul 15 21:13:18 2022
+| Host         : Tom-Laptop running 64-bit Service Pack 1  (build 7601)
+| Command      : report_clock_utilization -file design_1_wrapper_clock_utilization_routed.rpt
+| Design       : design_1_wrapper
+| Device       : 7z020-clg484
+| Speed File   : -1  PRODUCTION 1.11 2014-09-11
+----------------------------------------------------------------------------------------------
+
+Clock Utilization Report
+
+Table of Contents
+-----------------
+1. Clock Primitive Utilization
+2. Global Clock Resources
+3. Global Clock Source Details
+4. Local Clock Details
+5. Clock Regions: Key Resource Utilization
+6. Clock Regions : Global Clock Summary
+7. Device Cell Placement Summary for Global Clock g0
+8. Device Cell Placement Summary for Global Clock g1
+9. Device Cell Placement Summary for Global Clock g2
+10. Device Cell Placement Summary for Global Clock g3
+11. Device Cell Placement Summary for Global Clock g4
+12. Device Cell Placement Summary for Global Clock g5
+13. Device Cell Placement Summary for Global Clock g6
+14. Device Cell Placement Summary for Global Clock g7
+15. Device Cell Placement Summary for Global Clock g8
+16. Device Cell Placement Summary for Global Clock g9
+17. Device Cell Placement Summary for Global Clock g10
+18. Device Cell Placement Summary for Global Clock g11
+19. Device Cell Placement Summary for Global Clock g12
+20. Device Cell Placement Summary for Global Clock g13
+21. Clock Region Cell Placement per Global Clock: Region X0Y0
+22. Clock Region Cell Placement per Global Clock: Region X1Y0
+23. Clock Region Cell Placement per Global Clock: Region X0Y1
+24. Clock Region Cell Placement per Global Clock: Region X1Y1
+25. Clock Region Cell Placement per Global Clock: Region X0Y2
+26. Clock Region Cell Placement per Global Clock: Region X1Y2
+
+1. Clock Primitive Utilization
+------------------------------
+
++----------+------+-----------+-----+--------------+--------+
+| Type     | Used | Available | LOC | Clock Region | Pblock |
++----------+------+-----------+-----+--------------+--------+
+| BUFGCTRL |   14 |        32 |   0 |            0 |      0 |
+| BUFH     |    0 |        72 |   0 |            0 |      0 |
+| BUFIO    |    0 |        16 |   0 |            0 |      0 |
+| BUFMR    |    0 |         8 |   0 |            0 |      0 |
+| BUFR     |    0 |        16 |   0 |            0 |      0 |
+| MMCM     |    1 |         4 |   0 |            0 |      0 |
+| PLL      |    1 |         4 |   0 |            0 |      0 |
++----------+------+-----------+-----+--------------+--------+
+
+
+2. Global Clock Resources
+-------------------------
+
++-----------+-----------+-----------------+------------+----------------+--------------+-------------------+-------------+-----------------+--------------+-------------------------------+---------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| Global Id | Source Id | Driver Type/Pin | Constraint | Site           | Clock Region | Load Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock                         | Driver Pin                                                                                              | Net                                                                                              |
++-----------+-----------+-----------------+------------+----------------+--------------+-------------------+-------------+-----------------+--------------+-------------------------------+---------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| g0        | src0      | BUFG/O          | None       | BUFGCTRL_X0Y0  | n/a          |                 6 |        3427 |               1 |              |                               | design_1_i/verilog_boy_v1_0_0/inst/opcode_reg[7]_i_1/O                                                  | design_1_i/verilog_boy_v1_0_0/inst/top/clk_gb                                                    |
+| g1        | src1      | BUFG/O          | None       | BUFGCTRL_X0Y1  | n/a          |                 4 |         833 |               0 |       40.000 | clk_vga_design_1_clk_wiz_0_0  | design_1_i/clk_wiz_0/inst/clkout3_buf/O                                                                 | design_1_i/clk_wiz_0/inst/clk_vga                                                                |
+| g2        | src2      | BUFG/O          | None       | BUFGCTRL_X0Y16 | n/a          |                 4 |         674 |               0 |       10.000 | clk_fpga_0                    | design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O                                | design_1_i/processing_system7_0/inst/FCLK_CLK0                                                   |
+| g3        | src3      | BUFG/O          | None       | BUFGCTRL_X0Y2  | n/a          |                 2 |         119 |               0 |       20.833 | zed_audio_clk_48M             | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/audio_top/i_clocking/clkout1_buf/O | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/audio_top/i_clocking/CLK_48 |
+| g4        | src4      | BUFG/O          | None       | BUFGCTRL_X0Y3  | n/a          |                 1 |          51 |               0 |              |                               | design_1_i/verilog_boy_v1_0_0/inst/overflow_reg_i_3/O                                                   | design_1_i/verilog_boy_v1_0_0/inst/top/boy/sound/clk_sweep                                       |
+| g5        | src5      | BUFG/O          | None       | BUFGCTRL_X0Y4  | n/a          |                 1 |          46 |               0 |              |                               | design_1_i/verilog_boy_v1_0_0/inst/divider_reg[10]_C_i_2/O                                              | design_1_i/verilog_boy_v1_0_0/inst/top/boy/sound/clk_freq_div                                    |
+| g6        | src6      | BUFG/O          | None       | BUFGCTRL_X0Y5  | n/a          |                 1 |          42 |               0 |              |                               | design_1_i/verilog_boy_v1_0_0/inst/enve_left_reg[2]_P_i_3/O                                             | design_1_i/verilog_boy_v1_0_0/inst/top/boy/sound/clk_vol_env                                     |
+| g7        | src1      | BUFG/O          | None       | BUFGCTRL_X0Y7  | n/a          |                 1 |          19 |               0 |       10.000 | clk_100_design_1_clk_wiz_0_0  | design_1_i/clk_wiz_0/inst/clkout1_buf/O                                                                 | design_1_i/clk_wiz_0/inst/clk_100                                                                |
+| g8        | src7      | BUFG/O          | None       | BUFGCTRL_X0Y6  | n/a          |                 1 |           9 |              16 |              |                               | design_1_i/verilog_boy_v1_0_0/inst/latched_shift_clock_freq_reg[3]_i_1/O                                | design_1_i/verilog_boy_v1_0_0/inst/latched_shift_clock_freq_reg[3]_i_1_n_0                       |
+| g9        | src1      | BUFG/O          | None       | BUFGCTRL_X0Y12 | n/a          |                 1 |           1 |               0 |      119.000 | clk_gb2_design_1_clk_wiz_0_0  | design_1_i/clk_wiz_0/inst/clkout2_buf/O                                                                 | design_1_i/clk_wiz_0/inst/clk_gb2                                                                |
+| g10       | src1      | BUFG/O          | None       | BUFGCTRL_X0Y11 | n/a          |                 1 |           1 |               0 |       10.000 | clkfbout_design_1_clk_wiz_0_0 | design_1_i/clk_wiz_0/inst/clkf_buf/O                                                                    | design_1_i/clk_wiz_0/inst/clkfbout_buf_design_1_clk_wiz_0_0                                      |
+| g11       | src8      | BUFG/O          | None       | BUFGCTRL_X0Y10 | n/a          |                 1 |           1 |               1 |              |                               | design_1_i/verilog_boy_v1_0_0/inst/enable_reg_LDC_i_1__0/O                                              | design_1_i/verilog_boy_v1_0_0/inst/enable_reg_LDC_i_1__0_n_0                                     |
+| g12       | src9      | BUFG/O          | None       | BUFGCTRL_X0Y8  | n/a          |                 1 |           1 |               6 |              |                               | design_1_i/verilog_boy_v1_0_0/inst/enable_reg_LDC_i_1__1/O                                              | design_1_i/verilog_boy_v1_0_0/inst/enable_reg_LDC_i_1__1_n_0                                     |
+| g13       | src10     | BUFG/O          | None       | BUFGCTRL_X0Y9  | n/a          |                 1 |           1 |               2 |              |                               | design_1_i/verilog_boy_v1_0_0/inst/overflow_reg_i_4/O                                                   | design_1_i/verilog_boy_v1_0_0/inst/overflow_reg_i_4_n_0                                          |
++-----------+-----------+-----------------+------------+----------------+--------------+-------------------+-------------+-----------------+--------------+-------------------------------+---------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+
+
+3. Global Clock Source Details
+------------------------------
+
++-----------+-----------+--------------------+------------+-----------------+--------------+-------------+-----------------+---------------------+-------------------------------+-----------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| Source Id | Global Id | Driver Type/Pin    | Constraint | Site            | Clock Region | Clock Loads | Non-Clock Loads | Source Clock Period | Source Clock                  | Driver Pin                                                                                                      | Net                                                                                                         |
++-----------+-----------+--------------------+------------+-----------------+--------------+-------------+-----------------+---------------------+-------------------------------+-----------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| src0      | g0        | FDRE/Q             | None       | SLICE_X51Y46    | X1Y0         |           1 |               2 |                     |                               | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/clk_gb_reg/Q                               | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/clk_gb_reg_0                           |
+| src1      | g7        | PLLE2_ADV/CLKOUT0  | None       | PLLE2_ADV_X0Y0  | X0Y0         |           1 |               0 |              10.000 | clk_100_design_1_clk_wiz_0_0  | design_1_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0                                                                | design_1_i/clk_wiz_0/inst/clk_100_design_1_clk_wiz_0_0                                                      |
+| src1      | g9        | PLLE2_ADV/CLKOUT1  | None       | PLLE2_ADV_X0Y0  | X0Y0         |           1 |               0 |             119.000 | clk_gb2_design_1_clk_wiz_0_0  | design_1_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT1                                                                | design_1_i/clk_wiz_0/inst/clk_gb2_design_1_clk_wiz_0_0                                                      |
+| src1      | g1        | PLLE2_ADV/CLKOUT2  | None       | PLLE2_ADV_X0Y0  | X0Y0         |           1 |               0 |              40.000 | clk_vga_design_1_clk_wiz_0_0  | design_1_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT2                                                                | design_1_i/clk_wiz_0/inst/clk_vga_design_1_clk_wiz_0_0                                                      |
+| src1      | g10       | PLLE2_ADV/CLKFBOUT | None       | PLLE2_ADV_X0Y0  | X0Y0         |           1 |               0 |              10.000 | clkfbout_design_1_clk_wiz_0_0 | design_1_i/clk_wiz_0/inst/plle2_adv_inst/CLKFBOUT                                                               | design_1_i/clk_wiz_0/inst/clkfbout_design_1_clk_wiz_0_0                                                     |
+| src2      | g2        | PS7/FCLKCLK[0]     | PS7_X0Y0   | PS7_X0Y0        | X0Y2         |           1 |               0 |              10.000 | clk_fpga_0                    | design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]                                                           | design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]                                                 |
+| src3      | g3        | MMCME2_ADV/CLKOUT0 | None       | MMCME2_ADV_X1Y0 | X1Y0         |           1 |               0 |              20.833 | zed_audio_clk_48M             | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/audio_top/i_clocking/mmcm_adv_inst/CLKOUT0 | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/audio_top/i_clocking/zed_audio_clk_48M |
+| src4      | g4        | LUT2/O             | None       | SLICE_X49Y46    | X0Y0         |           1 |               0 |                     |                               | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/boy/sound/overflow_i_11/O                  | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/boy/sound/sequencer_state_reg[1]_1     |
+| src5      | g5        | FDRE/Q             | None       | SLICE_X52Y48    | X1Y0         |           1 |               1 |                     |                               | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/boy/sound/freq_div/o_reg/Q                 | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/boy/sound/freq_div/o_reg_0             |
+| src6      | g6        | LUT3/O             | None       | SLICE_X49Y46    | X0Y0         |           1 |               0 |                     |                               | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/boy/sound/enve_left[2]_P_i_6/O             | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/boy/sound/sequencer_state_reg[1]_0     |
+| src7      | g8        | FDRE/Q             | None       | SLICE_X83Y13    | X1Y0         |           1 |              26 |                     |                               | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/boy/sound/ch4_start_reg/Q                  | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/boy/sound/ch4_start_reg_0              |
+| src8      | g11       | FDRE/Q             | None       | SLICE_X84Y14    | X1Y0         |           1 |              71 |                     |                               | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/boy/sound/ch2_start_reg/Q                  | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/boy/sound/ch2_start_reg_0              |
+| src9      | g12       | FDRE/Q             | None       | SLICE_X84Y14    | X1Y0         |           1 |              39 |                     |                               | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/boy/sound/ch3_start_reg/Q                  | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/boy/sound/ch3_start_reg_0              |
+| src10     | g13       | FDRE/Q             | None       | SLICE_X84Y14    | X1Y0         |           1 |              77 |                     |                               | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/boy/sound/ch1_start_reg/Q                  | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/boy/sound/ch1_start_reg_0              |
++-----------+-----------+--------------------+------------+-----------------+--------------+-------------+-----------------+---------------------+-------------------------------+-----------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+
+
+4. Local Clock Details
+----------------------
+
++----------+-----------------+------------+-------------------+--------------+-------------+-----------------+--------------+-------+----------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+| Local Id | Driver Type/Pin | Constraint | Site/BEL          | Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock | Driver Pin                                                                                                     | Net                                                                                                              |
++----------+-----------------+------------+-------------------+--------------+-------------+-----------------+--------------+-------+----------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------||
+| 0        | FDRE/Q          | None       | SLICE_X28Y81/AFF  | X0Y1         |         488 |               1 |              |       | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/slv_reg0_reg[1]/Q                             | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/slv_reg0[1]                                     - Static -
+| 1        | FDRE/Q          | None       | SLICE_X55Y45/CFF  | X1Y0         |          60 |               5 |              |       | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/boy/sound/sequencer_state_reg[0]/Q        | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/boy/sound/Q[0]                              - Static -
+| 2        | FDRE/Q          | None       | SLICE_X78Y13/AFF  | X1Y0         |          14 |               1 |              |       | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/boy/sound/sound_ch4/clk_div_reg/Q         | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/boy/sound/sound_ch4/clk_div_reg_n_0         - Static -
+| 3        | FDRE/Q          | None       | SLICE_X99Y30/AFF  | X1Y0         |           5 |               1 |              |       | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/boy/sound/sound_ch3/clk_pointer_inc_reg/Q | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/boy/sound/sound_ch3/clk_pointer_inc_reg_n_0 - Static -
+| 4        | FDRE/Q          | None       | SLICE_X56Y46/AFF  | X1Y0         |           3 |               1 |              |       | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/boy/sound/frame_div/o_reg/Q               | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/boy/sound/frame_div/o_reg_0                 - Static -
+| 5        | FDRE/Q          | None       | SLICE_X101Y13/AFF | X1Y0         |           3 |               1 |              |       | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/boy/sound/sound_ch1/octo_freq_out_reg/Q   | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/boy/sound/sound_ch1/octo_freq_out_reg_n_0   - Static -
+| 6        | FDRE/Q          | None       | SLICE_X106Y6/AFF  | X1Y0         |           3 |               1 |              |       | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/boy/sound/sound_ch2/octo_freq_out_reg/Q   | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/boy/sound/sound_ch2/octo_freq_out_reg_n_0   - Static -
++----------+-----------------+------------+-------------------+--------------+-------------+-----------------+--------------+-------+----------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------||
+* Local Clocks in this context represents only clocks driven by non-global buffers
+** Clock Loads column represents the clock pin loads (pin count)
+*** Non-Clock Loads column represents the non-clock pin loads (pin count)
+
+
+5. Clock Regions: Key Resource Utilization
+------------------------------------------
+
++-------------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
+|                   | Global Clock |     BUFRs    |    BUFMRs    |    BUFIOs    |     MMCM     |      PLL     |      GT      |      PCI     |    ILOGIC    |    OLOGIC    |      FF      |     LUTM     |    RAMB18    |    RAMB36    |    DSP48E2   |
++-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
+| Clock Region Name | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail |
++-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
+| X0Y0              |    4 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    1 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   92 |  2500 |    0 |  1000 |    0 |    60 |   28 |    30 |    0 |    60 |
+| X1Y0              |   12 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    1 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 1574 |  3200 |   15 |   850 |    1 |    60 |   28 |    30 |    0 |    40 |
+| X0Y1              |    3 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |  414 |  1200 |   37 |   400 |    0 |    20 |   10 |    10 |    0 |    20 |
+| X1Y1              |    3 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    4 |  2600 |    4 |   850 |    0 |    60 |   30 |    30 |    0 |    40 |
+| X0Y2              |    2 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |  258 |  1200 |   77 |   400 |    0 |    20 |   10 |    10 |    0 |    20 |
+| X1Y2              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  2600 |    1 |   850 |    0 |    60 |   26 |    30 |    0 |    40 |
++-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
+* Global Clock column represents track count; while other columns represents cell counts
+
+
+6. Clock Regions : Global Clock Summary
+---------------------------------------
+
+All Modules
++----+----+----+
+|    | X0 | X1 |
++----+----+----+
+| Y2 |  2 |  2 |
+| Y1 |  3 |  3 |
+| Y0 |  4 | 12 |
++----+----+----+
+
+
+7. Device Cell Placement Summary for Global Clock g0
+----------------------------------------------------
+
++-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+-----------------------------------------------+
+| Global Id | Driver Type/Pin | Driver Region (D) | Clock | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                                           |
++-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+-----------------------------------------------+
+| g0        | BUFG/O          | n/a               |       |             |               |        1372 |        0 |              0 |        0 | design_1_i/verilog_boy_v1_0_0/inst/top/clk_gb |
++-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+-----------------------------------------------+
+* Logic Loads column represents load cell count of all cell types other than IO, GT and clock resources
+** IO Loads column represents load cell count of IO types
+*** Clocking Loads column represents load cell count that are clock resources (global clock buffer, MMCM, PLL, etc)
+**** GT Loads column represents load cell count of GT types
+
+
++----+-----+-------+
+|    | X0  | X1    |
++----+-----+-------+
+| Y2 |  10 |    26 |
+| Y1 |  10 |    32 |
+| Y0 |  35 |  1259 |
++----+-----+-------+
+
+
+8. Device Cell Placement Summary for Global Clock g1
+----------------------------------------------------
+
++-----------+-----------------+-------------------+------------------------------+-------------+----------------+-------------+----------+----------------+----------+-----------------------------------+
+| Global Id | Driver Type/Pin | Driver Region (D) | Clock                        | Period (ns) | Waveform (ns)  | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                               |
++-----------+-----------------+-------------------+------------------------------+-------------+----------------+-------------+----------+----------------+----------+-----------------------------------+
+| g1        | BUFG/O          | n/a               | clk_vga_design_1_clk_wiz_0_0 |      40.000 | {0.000 20.000} |         113 |        0 |              0 |        0 | design_1_i/clk_wiz_0/inst/clk_vga |
++-----------+-----------------+-------------------+------------------------------+-------------+----------------+-------------+----------+----------------+----------+-----------------------------------+
+* Logic Loads column represents load cell count of all cell types other than IO, GT and clock resources
+** IO Loads column represents load cell count of IO types
+*** Clocking Loads column represents load cell count that are clock resources (global clock buffer, MMCM, PLL, etc)
+**** GT Loads column represents load cell count of GT types
+
+
++----+-----+-----+
+|    | X0  | X1  |
++----+-----+-----+
+| Y2 |   0 |   0 |
+| Y1 |  63 |   2 |
+| Y0 |  15 |  33 |
++----+-----+-----+
+
+
+9. Device Cell Placement Summary for Global Clock g2
+----------------------------------------------------
+
++-----------+-----------------+-------------------+------------+-------------+---------------+-------------+----------+----------------+----------+------------------------------------------------+
+| Global Id | Driver Type/Pin | Driver Region (D) | Clock      | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                                            |
++-----------+-----------------+-------------------+------------+-------------+---------------+-------------+----------+----------------+----------+------------------------------------------------+
+| g2        | BUFG/O          | n/a               | clk_fpga_0 |      10.000 | {0.000 5.000} |         674 |        0 |              0 |        0 | design_1_i/processing_system7_0/inst/FCLK_CLK0 |
++-----------+-----------------+-------------------+------------+-------------+---------------+-------------+----------+----------------+----------+------------------------------------------------+
+* Logic Loads column represents load cell count of all cell types other than IO, GT and clock resources
+** IO Loads column represents load cell count of IO types
+*** Clocking Loads column represents load cell count that are clock resources (global clock buffer, MMCM, PLL, etc)
+**** GT Loads column represents load cell count of GT types
+
+
++----+------+----+
+|    | X0   | X1 |
++----+------+----+
+| Y2 |  314 |  1 |
+| Y1 |  355 |  4 |
+| Y0 |    0 |  0 |
++----+------+----+
+
+
+10. Device Cell Placement Summary for Global Clock g3
+-----------------------------------------------------
+
++-----------+-----------------+-------------------+-------------------+-------------+----------------+-------------+----------+----------------+----------+--------------------------------------------------------------------------------------------------+
+| Global Id | Driver Type/Pin | Driver Region (D) | Clock             | Period (ns) | Waveform (ns)  | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                                                                                              |
++-----------+-----------------+-------------------+-------------------+-------------+----------------+-------------+----------+----------------+----------+--------------------------------------------------------------------------------------------------+
+| g3        | BUFG/O          | n/a               | zed_audio_clk_48M |      20.833 | {0.000 10.417} |         119 |        0 |              0 |        0 | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/audio_top/i_clocking/CLK_48 |
++-----------+-----------------+-------------------+-------------------+-------------+----------------+-------------+----------+----------------+----------+--------------------------------------------------------------------------------------------------+
+* Logic Loads column represents load cell count of all cell types other than IO, GT and clock resources
+** IO Loads column represents load cell count of IO types
+*** Clocking Loads column represents load cell count that are clock resources (global clock buffer, MMCM, PLL, etc)
+**** GT Loads column represents load cell count of GT types
+
+
++----+-----+-----+
+|    | X0  | X1  |
++----+-----+-----+
+| Y2 |   0 |   0 |
+| Y1 |   0 |   0 |
+| Y0 |  69 |  50 |
++----+-----+-----+
+
+
+11. Device Cell Placement Summary for Global Clock g4
+-----------------------------------------------------
+
++-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+------------------------------------------------------------+
+| Global Id | Driver Type/Pin | Driver Region (D) | Clock | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                                                        |
++-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+------------------------------------------------------------+
+| g4        | BUFG/O          | n/a               |       |             |               |          51 |        0 |              0 |        0 | design_1_i/verilog_boy_v1_0_0/inst/top/boy/sound/clk_sweep |
++-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+------------------------------------------------------------+
+* Logic Loads column represents load cell count of all cell types other than IO, GT and clock resources
+** IO Loads column represents load cell count of IO types
+*** Clocking Loads column represents load cell count that are clock resources (global clock buffer, MMCM, PLL, etc)
+**** GT Loads column represents load cell count of GT types
+
+
++----+----+-----+
+|    | X0 | X1  |
++----+----+-----+
+| Y2 |  0 |   0 |
+| Y1 |  0 |   0 |
+| Y0 |  0 |  51 |
++----+----+-----+
+
+
+12. Device Cell Placement Summary for Global Clock g5
+-----------------------------------------------------
+
++-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+---------------------------------------------------------------+
+| Global Id | Driver Type/Pin | Driver Region (D) | Clock | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                                                           |
++-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+---------------------------------------------------------------+
+| g5        | BUFG/O          | n/a               |       |             |               |          46 |        0 |              0 |        0 | design_1_i/verilog_boy_v1_0_0/inst/top/boy/sound/clk_freq_div |
++-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+---------------------------------------------------------------+
+* Logic Loads column represents load cell count of all cell types other than IO, GT and clock resources
+** IO Loads column represents load cell count of IO types
+*** Clocking Loads column represents load cell count that are clock resources (global clock buffer, MMCM, PLL, etc)
+**** GT Loads column represents load cell count of GT types
+
+
++----+----+-----+
+|    | X0 | X1  |
++----+----+-----+
+| Y2 |  0 |   0 |
+| Y1 |  0 |   0 |
+| Y0 |  0 |  46 |
++----+----+-----+
+
+
+13. Device Cell Placement Summary for Global Clock g6
+-----------------------------------------------------
+
++-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+--------------------------------------------------------------+
+| Global Id | Driver Type/Pin | Driver Region (D) | Clock | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                                                          |
++-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+--------------------------------------------------------------+
+| g6        | BUFG/O          | n/a               |       |             |               |          42 |        0 |              0 |        0 | design_1_i/verilog_boy_v1_0_0/inst/top/boy/sound/clk_vol_env |
++-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+--------------------------------------------------------------+
+* Logic Loads column represents load cell count of all cell types other than IO, GT and clock resources
+** IO Loads column represents load cell count of IO types
+*** Clocking Loads column represents load cell count that are clock resources (global clock buffer, MMCM, PLL, etc)
+**** GT Loads column represents load cell count of GT types
+
+
++----+----+-----+
+|    | X0 | X1  |
++----+----+-----+
+| Y2 |  0 |   0 |
+| Y1 |  0 |   0 |
+| Y0 |  0 |  42 |
++----+----+-----+
+
+
+14. Device Cell Placement Summary for Global Clock g7
+-----------------------------------------------------
+
++-----------+-----------------+-------------------+------------------------------+-------------+---------------+-------------+----------+----------------+----------+-----------------------------------+
+| Global Id | Driver Type/Pin | Driver Region (D) | Clock                        | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                               |
++-----------+-----------------+-------------------+------------------------------+-------------+---------------+-------------+----------+----------------+----------+-----------------------------------+
+| g7        | BUFG/O          | n/a               | clk_100_design_1_clk_wiz_0_0 |      10.000 | {0.000 5.000} |          18 |        0 |              1 |        0 | design_1_i/clk_wiz_0/inst/clk_100 |
++-----------+-----------------+-------------------+------------------------------+-------------+---------------+-------------+----------+----------------+----------+-----------------------------------+
+* Logic Loads column represents load cell count of all cell types other than IO, GT and clock resources
+** IO Loads column represents load cell count of IO types
+*** Clocking Loads column represents load cell count that are clock resources (global clock buffer, MMCM, PLL, etc)
+**** GT Loads column represents load cell count of GT types
+
+
++----+----+-----+
+|    | X0 | X1  |
++----+----+-----+
+| Y2 |  0 |   0 |
+| Y1 |  0 |   0 |
+| Y0 |  0 |  19 |
++----+----+-----+
+
+
+15. Device Cell Placement Summary for Global Clock g8
+-----------------------------------------------------
+
++-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+----------------------------------------------------------------------------+
+| Global Id | Driver Type/Pin | Driver Region (D) | Clock | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                                                                        |
++-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+----------------------------------------------------------------------------+
+| g8        | BUFG/O          | n/a               |       |             |               |          25 |        0 |              0 |        0 | design_1_i/verilog_boy_v1_0_0/inst/latched_shift_clock_freq_reg[3]_i_1_n_0 |
++-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+----------------------------------------------------------------------------+
+* Logic Loads column represents load cell count of all cell types other than IO, GT and clock resources
+** IO Loads column represents load cell count of IO types
+*** Clocking Loads column represents load cell count that are clock resources (global clock buffer, MMCM, PLL, etc)
+**** GT Loads column represents load cell count of GT types
+
+
++----+----+-----+
+|    | X0 | X1  |
++----+----+-----+
+| Y2 |  0 |   0 |
+| Y1 |  0 |   0 |
+| Y0 |  0 |  25 |
++----+----+-----+
+
+
+16. Device Cell Placement Summary for Global Clock g9
+-----------------------------------------------------
+
++-----------+-----------------+-------------------+------------------------------+-------------+----------------+-------------+----------+----------------+----------+-----------------------------------+
+| Global Id | Driver Type/Pin | Driver Region (D) | Clock                        | Period (ns) | Waveform (ns)  | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                               |
++-----------+-----------------+-------------------+------------------------------+-------------+----------------+-------------+----------+----------------+----------+-----------------------------------+
+| g9        | BUFG/O          | n/a               | clk_gb2_design_1_clk_wiz_0_0 |     119.000 | {0.000 59.500} |           1 |        0 |              0 |        0 | design_1_i/clk_wiz_0/inst/clk_gb2 |
++-----------+-----------------+-------------------+------------------------------+-------------+----------------+-------------+----------+----------------+----------+-----------------------------------+
+* Logic Loads column represents load cell count of all cell types other than IO, GT and clock resources
+** IO Loads column represents load cell count of IO types
+*** Clocking Loads column represents load cell count that are clock resources (global clock buffer, MMCM, PLL, etc)
+**** GT Loads column represents load cell count of GT types
+
+
++----+----+----+
+|    | X0 | X1 |
++----+----+----+
+| Y2 |  0 |  0 |
+| Y1 |  0 |  0 |
+| Y0 |  0 |  1 |
++----+----+----+
+
+
+17. Device Cell Placement Summary for Global Clock g10
+------------------------------------------------------
+
++-----------+-----------------+-------------------+-------------------------------+-------------+---------------+-------------+----------+----------------+----------+-------------------------------------------------------------+
+| Global Id | Driver Type/Pin | Driver Region (D) | Clock                         | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                                                         |
++-----------+-----------------+-------------------+-------------------------------+-------------+---------------+-------------+----------+----------------+----------+-------------------------------------------------------------+
+| g10       | BUFG/O          | n/a               | clkfbout_design_1_clk_wiz_0_0 |      10.000 | {0.000 5.000} |           0 |        0 |              1 |        0 | design_1_i/clk_wiz_0/inst/clkfbout_buf_design_1_clk_wiz_0_0 |
++-----------+-----------------+-------------------+-------------------------------+-------------+---------------+-------------+----------+----------------+----------+-------------------------------------------------------------+
+* Logic Loads column represents load cell count of all cell types other than IO, GT and clock resources
+** IO Loads column represents load cell count of IO types
+*** Clocking Loads column represents load cell count that are clock resources (global clock buffer, MMCM, PLL, etc)
+**** GT Loads column represents load cell count of GT types
+
+
++----+----+----+
+|    | X0 | X1 |
++----+----+----+
+| Y2 |  0 |  0 |
+| Y1 |  0 |  0 |
+| Y0 |  1 |  0 |
++----+----+----+
+
+
+18. Device Cell Placement Summary for Global Clock g11
+------------------------------------------------------
+
++-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+--------------------------------------------------------------+
+| Global Id | Driver Type/Pin | Driver Region (D) | Clock | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                                                          |
++-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+--------------------------------------------------------------+
+| g11       | BUFG/O          | n/a               |       |             |               |           2 |        0 |              0 |        0 | design_1_i/verilog_boy_v1_0_0/inst/enable_reg_LDC_i_1__0_n_0 |
++-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+--------------------------------------------------------------+
+* Logic Loads column represents load cell count of all cell types other than IO, GT and clock resources
+** IO Loads column represents load cell count of IO types
+*** Clocking Loads column represents load cell count that are clock resources (global clock buffer, MMCM, PLL, etc)
+**** GT Loads column represents load cell count of GT types
+
+
++----+----+----+
+|    | X0 | X1 |
++----+----+----+
+| Y2 |  0 |  0 |
+| Y1 |  0 |  0 |
+| Y0 |  0 |  2 |
++----+----+----+
+
+
+19. Device Cell Placement Summary for Global Clock g12
+------------------------------------------------------
+
++-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+--------------------------------------------------------------+
+| Global Id | Driver Type/Pin | Driver Region (D) | Clock | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                                                          |
++-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+--------------------------------------------------------------+
+| g12       | BUFG/O          | n/a               |       |             |               |           7 |        0 |              0 |        0 | design_1_i/verilog_boy_v1_0_0/inst/enable_reg_LDC_i_1__1_n_0 |
++-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+--------------------------------------------------------------+
+* Logic Loads column represents load cell count of all cell types other than IO, GT and clock resources
+** IO Loads column represents load cell count of IO types
+*** Clocking Loads column represents load cell count that are clock resources (global clock buffer, MMCM, PLL, etc)
+**** GT Loads column represents load cell count of GT types
+
+
++----+----+----+
+|    | X0 | X1 |
++----+----+----+
+| Y2 |  0 |  0 |
+| Y1 |  0 |  0 |
+| Y0 |  0 |  7 |
++----+----+----+
+
+
+20. Device Cell Placement Summary for Global Clock g13
+------------------------------------------------------
+
++-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+---------------------------------------------------------+
+| Global Id | Driver Type/Pin | Driver Region (D) | Clock | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                                                     |
++-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+---------------------------------------------------------+
+| g13       | BUFG/O          | n/a               |       |             |               |           3 |        0 |              0 |        0 | design_1_i/verilog_boy_v1_0_0/inst/overflow_reg_i_4_n_0 |
++-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+---------------------------------------------------------+
+* Logic Loads column represents load cell count of all cell types other than IO, GT and clock resources
+** IO Loads column represents load cell count of IO types
+*** Clocking Loads column represents load cell count that are clock resources (global clock buffer, MMCM, PLL, etc)
+**** GT Loads column represents load cell count of GT types
+
+
++----+----+----+
+|    | X0 | X1 |
++----+----+----+
+| Y2 |  0 |  0 |
+| Y1 |  0 |  0 |
+| Y0 |  0 |  3 |
++----+----+----+
+
+
+21. Clock Region Cell Placement per Global Clock: Region X0Y0
+-------------------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+--------------------------------------------------------------------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                                                                              |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+--------------------------------------------------------------------------------------------------+
+| g0        | n/a   | BUFG/O          | None       |          35 |               0 |  7 |      0 |   28 |   0 |  0 |    0 |   0 |       0 | design_1_i/verilog_boy_v1_0_0/inst/top/clk_gb                                                    |
+| g1        | n/a   | BUFG/O          | None       |          15 |               0 | 15 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | design_1_i/clk_wiz_0/inst/clk_vga                                                                |
+| g3        | n/a   | BUFG/O          | None       |          69 |               0 | 68 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/audio_top/i_clocking/CLK_48 |
+| g10       | n/a   | BUFG/O          | None       |           1 |               0 |  0 |      0 |    0 |   0 |  0 |    0 |   1 |       0 | design_1_i/clk_wiz_0/inst/clkfbout_buf_design_1_clk_wiz_0_0                                      |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+--------------------------------------------------------------------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+
+
+22. Clock Region Cell Placement per Global Clock: Region X1Y0
+-------------------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+--------------------------------------------------------------------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                                                                              |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+--------------------------------------------------------------------------------------------------+
+| g0        | n/a   | BUFG/O          | None       |        1258 |               1 | 1227 |      0 |   29 |   0 |  0 |    0 |   0 |       0 | design_1_i/verilog_boy_v1_0_0/inst/top/clk_gb                                                    |
+| g1        | n/a   | BUFG/O          | None       |          33 |               0 |   33 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | design_1_i/clk_wiz_0/inst/clk_vga                                                                |
+| g3        | n/a   | BUFG/O          | None       |          50 |               0 |   47 |      3 |    0 |   0 |  0 |    0 |   0 |       0 | design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/audio_top/i_clocking/CLK_48 |
+| g4        | n/a   | BUFG/O          | None       |          51 |               0 |   51 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | design_1_i/verilog_boy_v1_0_0/inst/top/boy/sound/clk_sweep                                       |
+| g5        | n/a   | BUFG/O          | None       |          46 |               0 |   46 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | design_1_i/verilog_boy_v1_0_0/inst/top/boy/sound/clk_freq_div                                    |
+| g6        | n/a   | BUFG/O          | None       |          42 |               0 |   42 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | design_1_i/verilog_boy_v1_0_0/inst/top/boy/sound/clk_vol_env                                     |
+| g7        | n/a   | BUFG/O          | None       |          19 |               0 |   18 |      0 |    0 |   0 |  0 |    1 |   0 |       0 | design_1_i/clk_wiz_0/inst/clk_100                                                                |
+| g8        | n/a   | BUFG/O          | None       |           9 |              16 |   24 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | design_1_i/verilog_boy_v1_0_0/inst/latched_shift_clock_freq_reg[3]_i_1_n_0                       |
+| g9        | n/a   | BUFG/O          | None       |           1 |               0 |    1 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | design_1_i/clk_wiz_0/inst/clk_gb2                                                                |
+| g11       | n/a   | BUFG/O          | None       |           1 |               1 |    1 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | design_1_i/verilog_boy_v1_0_0/inst/enable_reg_LDC_i_1__0_n_0                                     |
+| g12       | n/a   | BUFG/O          | None       |           1 |               6 |    6 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | design_1_i/verilog_boy_v1_0_0/inst/enable_reg_LDC_i_1__1_n_0                                     |
+| g13       | n/a   | BUFG/O          | None       |           1 |               2 |    2 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | design_1_i/verilog_boy_v1_0_0/inst/overflow_reg_i_4_n_0                                          |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+--------------------------------------------------------------------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+
+
+23. Clock Region Cell Placement per Global Clock: Region X0Y1
+-------------------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+-----+----+------+-----+---------+------------------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF  | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                            |
++-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+-----+----+------+-----+---------+------------------------------------------------+
+| g0        | n/a   | BUFG/O          | None       |          10 |               0 |   0 |      0 |   10 |   0 |  0 |    0 |   0 |       0 | design_1_i/verilog_boy_v1_0_0/inst/top/clk_gb  |
+| g1        | n/a   | BUFG/O          | None       |          63 |               0 |  63 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | design_1_i/clk_wiz_0/inst/clk_vga              |
+| g2        | n/a   | BUFG/O          | None       |         355 |               0 | 351 |      4 |    0 |   0 |  0 |    0 |   0 |       0 | design_1_i/processing_system7_0/inst/FCLK_CLK0 |
++-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+-----+----+------+-----+---------+------------------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+
+
+24. Clock Region Cell Placement per Global Clock: Region X1Y1
+-------------------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+------------------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                            |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+------------------------------------------------+
+| g0        | n/a   | BUFG/O          | None       |          32 |               0 |  2 |      0 |   30 |   0 |  0 |    0 |   0 |       0 | design_1_i/verilog_boy_v1_0_0/inst/top/clk_gb  |
+| g1        | n/a   | BUFG/O          | None       |           2 |               0 |  2 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | design_1_i/clk_wiz_0/inst/clk_vga              |
+| g2        | n/a   | BUFG/O          | None       |           4 |               0 |  0 |      4 |    0 |   0 |  0 |    0 |   0 |       0 | design_1_i/processing_system7_0/inst/FCLK_CLK0 |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+------------------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+
+
+25. Clock Region Cell Placement per Global Clock: Region X0Y2
+-------------------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+-----+----+------+-----+---------+------------------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF  | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                            |
++-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+-----+----+------+-----+---------+------------------------------------------------+
+| g0        | n/a   | BUFG/O          | None       |          10 |               0 |   0 |      0 |   10 |   0 |  0 |    0 |   0 |       0 | design_1_i/verilog_boy_v1_0_0/inst/top/clk_gb  |
+| g2        | n/a   | BUFG/O          | None       |         314 |               0 | 258 |     55 |    0 |   0 |  0 |    0 |   0 |       0 | design_1_i/processing_system7_0/inst/FCLK_CLK0 |
++-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+-----+----+------+-----+---------+------------------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+
+
+26. Clock Region Cell Placement per Global Clock: Region X1Y2
+-------------------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+------------------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                            |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+------------------------------------------------+
+| g0        | n/a   | BUFG/O          | None       |          26 |               0 |  0 |      0 |   26 |   0 |  0 |    0 |   0 |       0 | design_1_i/verilog_boy_v1_0_0/inst/top/clk_gb  |
+| g2        | n/a   | BUFG/O          | None       |           1 |               0 |  0 |      1 |    0 |   0 |  0 |    0 |   0 |       0 | design_1_i/processing_system7_0/inst/FCLK_CLK0 |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+------------------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+
+
+
+# Location of BUFG Primitives 
+set_property LOC BUFGCTRL_X0Y2 [get_cells design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/audio_top/i_clocking/clkout1_buf]
+set_property LOC BUFGCTRL_X0Y0 [get_cells design_1_i/verilog_boy_v1_0_0/inst/opcode_reg[7]_i_1]
+set_property LOC BUFGCTRL_X0Y5 [get_cells design_1_i/verilog_boy_v1_0_0/inst/enve_left_reg[2]_P_i_3]
+set_property LOC BUFGCTRL_X0Y3 [get_cells design_1_i/verilog_boy_v1_0_0/inst/overflow_reg_i_3]
+set_property LOC BUFGCTRL_X0Y4 [get_cells design_1_i/verilog_boy_v1_0_0/inst/divider_reg[10]_C_i_2]
+set_property LOC BUFGCTRL_X0Y9 [get_cells design_1_i/verilog_boy_v1_0_0/inst/overflow_reg_i_4]
+set_property LOC BUFGCTRL_X0Y6 [get_cells design_1_i/verilog_boy_v1_0_0/inst/latched_shift_clock_freq_reg[3]_i_1]
+set_property LOC BUFGCTRL_X0Y8 [get_cells design_1_i/verilog_boy_v1_0_0/inst/enable_reg_LDC_i_1__1]
+set_property LOC BUFGCTRL_X0Y10 [get_cells design_1_i/verilog_boy_v1_0_0/inst/enable_reg_LDC_i_1__0]
+set_property LOC BUFGCTRL_X0Y16 [get_cells design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG]
+set_property LOC BUFGCTRL_X0Y11 [get_cells design_1_i/clk_wiz_0/inst/clkf_buf]
+set_property LOC BUFGCTRL_X0Y1 [get_cells design_1_i/clk_wiz_0/inst/clkout3_buf]
+set_property LOC BUFGCTRL_X0Y12 [get_cells design_1_i/clk_wiz_0/inst/clkout2_buf]
+set_property LOC BUFGCTRL_X0Y7 [get_cells design_1_i/clk_wiz_0/inst/clkout1_buf]
+
+# Location of IO Primitives which is load of clock spine
+
+# Location of clock ports
+set_property LOC IOB_X0Y26 [get_ports clk_in1]
+
+# Clock net "design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/audio_top/i_clocking/CLK_48" driven by instance "design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/audio_top/i_clocking/clkout1_buf" located at site "BUFGCTRL_X0Y2"
+#startgroup
+create_pblock {CLKAG_design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/audio_top/i_clocking/CLK_48}
+add_cells_to_pblock [get_pblocks  {CLKAG_design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/audio_top/i_clocking/CLK_48}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/audio_top/i_clocking/CLK_48"}]]]
+resize_pblock [get_pblocks {CLKAG_design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/audio_top/i_clocking/CLK_48}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0 CLOCKREGION_X1Y0:CLOCKREGION_X1Y0}
+#endgroup
+
+# Clock net "design_1_i/verilog_boy_v1_0_0/inst/top/clk_gb" driven by instance "design_1_i/verilog_boy_v1_0_0/inst/opcode_reg[7]_i_1" located at site "BUFGCTRL_X0Y0"
+#startgroup
+create_pblock {CLKAG_design_1_i/verilog_boy_v1_0_0/inst/top/clk_gb}
+add_cells_to_pblock [get_pblocks  {CLKAG_design_1_i/verilog_boy_v1_0_0/inst/top/clk_gb}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="design_1_i/verilog_boy_v1_0_0/inst/top/clk_gb"}]]]
+resize_pblock [get_pblocks {CLKAG_design_1_i/verilog_boy_v1_0_0/inst/top/clk_gb}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0 CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X1Y0:CLOCKREGION_X1Y0 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2}
+#endgroup
+
+# Clock net "design_1_i/verilog_boy_v1_0_0/inst/top/boy/sound/clk_vol_env" driven by instance "design_1_i/verilog_boy_v1_0_0/inst/enve_left_reg[2]_P_i_3" located at site "BUFGCTRL_X0Y5"
+#startgroup
+create_pblock {CLKAG_design_1_i/verilog_boy_v1_0_0/inst/top/boy/sound/clk_vol_env}
+add_cells_to_pblock [get_pblocks  {CLKAG_design_1_i/verilog_boy_v1_0_0/inst/top/boy/sound/clk_vol_env}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="design_1_i/verilog_boy_v1_0_0/inst/top/boy/sound/clk_vol_env"}]]]
+resize_pblock [get_pblocks {CLKAG_design_1_i/verilog_boy_v1_0_0/inst/top/boy/sound/clk_vol_env}] -add {CLOCKREGION_X1Y0:CLOCKREGION_X1Y0}
+#endgroup
+
+# Clock net "design_1_i/verilog_boy_v1_0_0/inst/top/boy/sound/clk_sweep" driven by instance "design_1_i/verilog_boy_v1_0_0/inst/overflow_reg_i_3" located at site "BUFGCTRL_X0Y3"
+#startgroup
+create_pblock {CLKAG_design_1_i/verilog_boy_v1_0_0/inst/top/boy/sound/clk_sweep}
+add_cells_to_pblock [get_pblocks  {CLKAG_design_1_i/verilog_boy_v1_0_0/inst/top/boy/sound/clk_sweep}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="design_1_i/verilog_boy_v1_0_0/inst/top/boy/sound/clk_sweep"}]]]
+resize_pblock [get_pblocks {CLKAG_design_1_i/verilog_boy_v1_0_0/inst/top/boy/sound/clk_sweep}] -add {CLOCKREGION_X1Y0:CLOCKREGION_X1Y0}
+#endgroup
+
+# Clock net "design_1_i/verilog_boy_v1_0_0/inst/top/boy/sound/clk_freq_div" driven by instance "design_1_i/verilog_boy_v1_0_0/inst/divider_reg[10]_C_i_2" located at site "BUFGCTRL_X0Y4"
+#startgroup
+create_pblock {CLKAG_design_1_i/verilog_boy_v1_0_0/inst/top/boy/sound/clk_freq_div}
+add_cells_to_pblock [get_pblocks  {CLKAG_design_1_i/verilog_boy_v1_0_0/inst/top/boy/sound/clk_freq_div}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="design_1_i/verilog_boy_v1_0_0/inst/top/boy/sound/clk_freq_div"}]]]
+resize_pblock [get_pblocks {CLKAG_design_1_i/verilog_boy_v1_0_0/inst/top/boy/sound/clk_freq_div}] -add {CLOCKREGION_X1Y0:CLOCKREGION_X1Y0}
+#endgroup
+
+# Clock net "design_1_i/verilog_boy_v1_0_0/inst/overflow_reg_i_4_n_0" driven by instance "design_1_i/verilog_boy_v1_0_0/inst/overflow_reg_i_4" located at site "BUFGCTRL_X0Y9"
+#startgroup
+create_pblock {CLKAG_design_1_i/verilog_boy_v1_0_0/inst/overflow_reg_i_4_n_0}
+add_cells_to_pblock [get_pblocks  {CLKAG_design_1_i/verilog_boy_v1_0_0/inst/overflow_reg_i_4_n_0}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="design_1_i/verilog_boy_v1_0_0/inst/overflow_reg_i_4_n_0"}]]]
+resize_pblock [get_pblocks {CLKAG_design_1_i/verilog_boy_v1_0_0/inst/overflow_reg_i_4_n_0}] -add {CLOCKREGION_X1Y0:CLOCKREGION_X1Y0}
+#endgroup
+
+# Clock net "design_1_i/verilog_boy_v1_0_0/inst/latched_shift_clock_freq_reg[3]_i_1_n_0" driven by instance "design_1_i/verilog_boy_v1_0_0/inst/latched_shift_clock_freq_reg[3]_i_1" located at site "BUFGCTRL_X0Y6"
+#startgroup
+create_pblock {CLKAG_design_1_i/verilog_boy_v1_0_0/inst/latched_shift_clock_freq_reg[3]_i_1_n_0}
+add_cells_to_pblock [get_pblocks  {CLKAG_design_1_i/verilog_boy_v1_0_0/inst/latched_shift_clock_freq_reg[3]_i_1_n_0}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="design_1_i/verilog_boy_v1_0_0/inst/latched_shift_clock_freq_reg[3]_i_1_n_0"}]]]
+resize_pblock [get_pblocks {CLKAG_design_1_i/verilog_boy_v1_0_0/inst/latched_shift_clock_freq_reg[3]_i_1_n_0}] -add {CLOCKREGION_X1Y0:CLOCKREGION_X1Y0}
+#endgroup
+
+# Clock net "design_1_i/verilog_boy_v1_0_0/inst/enable_reg_LDC_i_1__1_n_0" driven by instance "design_1_i/verilog_boy_v1_0_0/inst/enable_reg_LDC_i_1__1" located at site "BUFGCTRL_X0Y8"
+#startgroup
+create_pblock {CLKAG_design_1_i/verilog_boy_v1_0_0/inst/enable_reg_LDC_i_1__1_n_0}
+add_cells_to_pblock [get_pblocks  {CLKAG_design_1_i/verilog_boy_v1_0_0/inst/enable_reg_LDC_i_1__1_n_0}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="design_1_i/verilog_boy_v1_0_0/inst/enable_reg_LDC_i_1__1_n_0"}]]]
+resize_pblock [get_pblocks {CLKAG_design_1_i/verilog_boy_v1_0_0/inst/enable_reg_LDC_i_1__1_n_0}] -add {CLOCKREGION_X1Y0:CLOCKREGION_X1Y0}
+#endgroup
+
+# Clock net "design_1_i/verilog_boy_v1_0_0/inst/enable_reg_LDC_i_1__0_n_0" driven by instance "design_1_i/verilog_boy_v1_0_0/inst/enable_reg_LDC_i_1__0" located at site "BUFGCTRL_X0Y10"
+#startgroup
+create_pblock {CLKAG_design_1_i/verilog_boy_v1_0_0/inst/enable_reg_LDC_i_1__0_n_0}
+add_cells_to_pblock [get_pblocks  {CLKAG_design_1_i/verilog_boy_v1_0_0/inst/enable_reg_LDC_i_1__0_n_0}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="design_1_i/verilog_boy_v1_0_0/inst/enable_reg_LDC_i_1__0_n_0"}]]]
+resize_pblock [get_pblocks {CLKAG_design_1_i/verilog_boy_v1_0_0/inst/enable_reg_LDC_i_1__0_n_0}] -add {CLOCKREGION_X1Y0:CLOCKREGION_X1Y0}
+#endgroup
+
+# Clock net "design_1_i/processing_system7_0/inst/FCLK_CLK0" driven by instance "design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG" located at site "BUFGCTRL_X0Y16"
+#startgroup
+create_pblock {CLKAG_design_1_i/processing_system7_0/inst/FCLK_CLK0}
+add_cells_to_pblock [get_pblocks  {CLKAG_design_1_i/processing_system7_0/inst/FCLK_CLK0}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="design_1_i/processing_system7_0/inst/FCLK_CLK0"}]]]
+resize_pblock [get_pblocks {CLKAG_design_1_i/processing_system7_0/inst/FCLK_CLK0}] -add {CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2}
+#endgroup
+
+# Clock net "design_1_i/clk_wiz_0/inst/clk_vga" driven by instance "design_1_i/clk_wiz_0/inst/clkout3_buf" located at site "BUFGCTRL_X0Y1"
+#startgroup
+create_pblock {CLKAG_design_1_i/clk_wiz_0/inst/clk_vga}
+add_cells_to_pblock [get_pblocks  {CLKAG_design_1_i/clk_wiz_0/inst/clk_vga}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="design_1_i/clk_wiz_0/inst/clk_vga"}]]]
+resize_pblock [get_pblocks {CLKAG_design_1_i/clk_wiz_0/inst/clk_vga}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0 CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X1Y0:CLOCKREGION_X1Y0 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
+#endgroup
+
+# Clock net "design_1_i/clk_wiz_0/inst/clk_gb2" driven by instance "design_1_i/clk_wiz_0/inst/clkout2_buf" located at site "BUFGCTRL_X0Y12"
+#startgroup
+create_pblock {CLKAG_design_1_i/clk_wiz_0/inst/clk_gb2}
+add_cells_to_pblock [get_pblocks  {CLKAG_design_1_i/clk_wiz_0/inst/clk_gb2}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="design_1_i/clk_wiz_0/inst/clk_gb2"}]]]
+resize_pblock [get_pblocks {CLKAG_design_1_i/clk_wiz_0/inst/clk_gb2}] -add {CLOCKREGION_X1Y0:CLOCKREGION_X1Y0}
+#endgroup
+
+# Clock net "design_1_i/clk_wiz_0/inst/clk_100" driven by instance "design_1_i/clk_wiz_0/inst/clkout1_buf" located at site "BUFGCTRL_X0Y7"
+#startgroup
+create_pblock {CLKAG_design_1_i/clk_wiz_0/inst/clk_100}
+add_cells_to_pblock [get_pblocks  {CLKAG_design_1_i/clk_wiz_0/inst/clk_100}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL && NAME!=design_1_i/verilog_boy_v1_0_0/inst/verilog_boy_v1_0_S00_AXI_inst/top/audio_top/i_clocking/mmcm_adv_inst} -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="design_1_i/clk_wiz_0/inst/clk_100"}]]]
+resize_pblock [get_pblocks {CLKAG_design_1_i/clk_wiz_0/inst/clk_100}] -add {CLOCKREGION_X1Y0:CLOCKREGION_X1Y0}
+#endgroup

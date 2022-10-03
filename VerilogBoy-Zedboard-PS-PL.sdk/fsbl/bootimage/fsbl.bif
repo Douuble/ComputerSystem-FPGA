@@ -1,0 +1,7 @@
+//arch = zynq; split = false; format = BIN
+the_ROM_image:
+{
+	[bootloader]C:\Users\Public\VerilogBoy-Zedboard\VivadoProject\ip_repo\VerilogBoy-Zedboard-PS-PL\VerilogBoy-Zedboard-PS-PL.sdk\fsbl\Debug\fsbl.elf
+	C:\Users\Public\VerilogBoy-Zedboard\VivadoProject\ip_repo\VerilogBoy-Zedboard-PS-PL\VerilogBoy-Zedboard-PS-PL.sdk\design_1_wrapper_hw_platform_0\design_1_wrapper.bit
+	C:\Users\Public\VerilogBoy-Zedboard\VivadoProject\ip_repo\VerilogBoy-Zedboard-PS-PL\VerilogBoy-Zedboard-PS-PL.sdk\test_verilog_boy\Debug\test_verilog_boy.elf
+}

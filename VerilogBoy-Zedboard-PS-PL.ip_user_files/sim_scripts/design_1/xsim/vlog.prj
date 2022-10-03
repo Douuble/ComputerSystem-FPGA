@@ -1,0 +1,40 @@
+verilog xil_defaultlib --include "../../../../VerilogBoy-Zedboard-PS-PL.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" --include "../../../../VerilogBoy-Zedboard-PS-PL.srcs/sources_1/bd/design_1/ipshared/70cf/hdl" --include "../../../../VerilogBoy-Zedboard-PS-PL.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0" --include "../../../../VerilogBoy-Zedboard-PS-PL.srcs/sources_1/bd/design_1/ipshared/85a3" \
+"../../../bd/design_1/ip/design_1_processing_system7_0_0/sim/design_1_processing_system7_0_0.v" \
+"../../../bd/design_1/ip/design_1_verilog_boy_v1_0_0_0/src/cart_ram_d/sim/cart_ram_d.v" \
+"../../../bd/design_1/ip/design_1_verilog_boy_v1_0_0_0/src/singleport_ram_8k/sim/singleport_ram_8k.v" \
+"../../../bd/design_1/ip/design_1_verilog_boy_v1_0_0_0/src/crom/sim/crom.v" \
+"../../../bd/design_1/ip/design_1_verilog_boy_v1_0_0_0/src/vga_mem_d/sim/vga_mem_d.v" \
+"../../../bd/design_1/ipshared/edb9/src/alu.v" \
+"../../../bd/design_1/ipshared/edb9/src/boy.v" \
+"../../../bd/design_1/ipshared/edb9/src/brom.v" \
+"../../../bd/design_1/ipshared/edb9/src/clk_div.v" \
+"../../../bd/design_1/ipshared/edb9/src/control.v" \
+"../../../bd/design_1/ipshared/edb9/src/cpu.v" \
+"../../../bd/design_1/ipshared/edb9/src/dma.v" \
+"../../../bd/design_1/ipshared/edb9/src/mbc5.v" \
+"../../../bd/design_1/ipshared/edb9/src/ppu.v" \
+"../../../bd/design_1/ipshared/edb9/src/regfile.v" \
+"../../../bd/design_1/ipshared/edb9/src/serial.v" \
+"../../../bd/design_1/ipshared/edb9/src/singlereg.v" \
+"../../../bd/design_1/ipshared/edb9/src/sound.v" \
+"../../../bd/design_1/ipshared/edb9/src/sound_channel_mix.v" \
+"../../../bd/design_1/ipshared/edb9/src/sound_length_ctr.v" \
+"../../../bd/design_1/ipshared/edb9/src/sound_noise.v" \
+"../../../bd/design_1/ipshared/edb9/src/sound_square.v" \
+"../../../bd/design_1/ipshared/edb9/src/sound_vol_env.v" \
+"../../../bd/design_1/ipshared/edb9/src/sound_wave.v" \
+"../../../bd/design_1/ipshared/edb9/src/timer.v" \
+"../../../bd/design_1/ipshared/edb9/src/top.v" \
+"../../../bd/design_1/ipshared/edb9/src/verilog_boy_v1_0_S00_AXI.v" \
+"../../../bd/design_1/ipshared/edb9/src/vga_mixer.v" \
+"../../../bd/design_1/ipshared/edb9/src/vga_timing.v" \
+"../../../bd/design_1/ipshared/edb9/src/verilog_boy_v1_0.v" \
+"../../../bd/design_1/ip/design_1_verilog_boy_v1_0_0_0/sim/design_1_verilog_boy_v1_0_0_0.v" \
+"../../../bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_clk_wiz.v" \
+"../../../bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.v" \
+"../../../bd/design_1/sim/design_1.v" \
+"../../../bd/design_1/ip/design_1_auto_pc_0/sim/design_1_auto_pc_0.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# 
+# Start of session at: Fri Jul 15 06:54:46 2022
+# Process ID: 10112
+# Current directory: C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/webtalk
+# Command line: wbtcv.exe -mode batch -source sdk_webtalk.tcl
+# Log file: C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/webtalk/webtalk.log
+# Journal file: C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/webtalk\webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl

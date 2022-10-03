@@ -1,0 +1,1008 @@
+20:48:46 INFO  : Registering command handlers for SDK TCF services
+20:48:47 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\Public\VerilogBoy-Zedboard\VivadoProject\ip_repo\VerilogBoy-Zedboard-PS-PL\VerilogBoy-Zedboard-PS-PL.sdk\temp_xsdb_launch_script.tcl
+20:48:49 INFO  : XSCT server has started successfully.
+20:48:49 INFO  : Successfully done setting XSCT server connection channel  
+20:48:49 INFO  : Successfully done setting SDK workspace  
+20:48:49 INFO  : Processing command line option -hwspec C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper.hdf.
+21:30:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:30:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248530849" && level==0} -index 1' command is executed.
+21:30:44 INFO  : FPGA configured successfully with bitstream "C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+21:31:12 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:31:12 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248530849" && level==0} -index 1' command is executed.
+21:31:14 INFO  : FPGA configured successfully with bitstream "C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+21:31:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248530849" && level==0} -index 1' command is executed.
+21:31:47 INFO  : 'fpga -state' command is executed.
+21:31:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:31:47 INFO  : Jtag cable 'Digilent Zed 210248530849' is selected.
+21:31:47 INFO  : 'jtag frequency' command is executed.
+21:31:47 INFO  : Sourcing of 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:31:47 INFO  : Context for 'APU' is selected.
+21:31:47 INFO  : Hardware design information is loaded from 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+21:31:47 INFO  : 'configparams force-mem-access 1' command is executed.
+21:31:47 INFO  : Context for 'APU' is selected.
+21:31:47 INFO  : 'stop' command is executed.
+21:31:47 INFO  : 'ps7_init' command is executed.
+21:31:47 INFO  : 'ps7_post_config' command is executed.
+21:31:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:31:47 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:31:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:31:47 INFO  : The application 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:31:47 INFO  : 'configparams force-mem-access 0' command is executed.
+21:31:47 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+loadhw -hw C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+dow C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:31:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:31:47 INFO  : 'con' command is executed.
+21:31:47 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+con
+----------------End of Script----------------
+
+21:31:47 INFO  : Disconnected from the channel tcfchan#1.
+21:40:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248530849" && level==0} -index 1' command is executed.
+21:40:22 INFO  : 'fpga -state' command is executed.
+21:40:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:40:22 INFO  : Jtag cable 'Digilent Zed 210248530849' is selected.
+21:40:22 INFO  : 'jtag frequency' command is executed.
+21:40:22 INFO  : Sourcing of 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:40:22 INFO  : Context for 'APU' is selected.
+21:40:22 INFO  : Hardware design information is loaded from 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+21:40:22 INFO  : 'configparams force-mem-access 1' command is executed.
+21:40:22 INFO  : Context for 'APU' is selected.
+21:40:22 INFO  : 'stop' command is executed.
+21:40:23 INFO  : 'ps7_init' command is executed.
+21:40:23 INFO  : 'ps7_post_config' command is executed.
+21:40:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:40:23 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:40:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:40:23 INFO  : The application 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:40:23 INFO  : 'configparams force-mem-access 0' command is executed.
+21:40:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+loadhw -hw C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+dow C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:40:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:40:23 INFO  : 'con' command is executed.
+21:40:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+con
+----------------End of Script----------------
+
+21:40:23 INFO  : Disconnected from the channel tcfchan#2.
+21:40:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248530849" && level==0} -index 1' command is executed.
+21:40:58 INFO  : 'fpga -state' command is executed.
+21:40:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:40:58 INFO  : Jtag cable 'Digilent Zed 210248530849' is selected.
+21:40:58 INFO  : 'jtag frequency' command is executed.
+21:40:58 INFO  : Sourcing of 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:40:58 INFO  : Context for 'APU' is selected.
+21:40:58 INFO  : Hardware design information is loaded from 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+21:40:58 INFO  : 'configparams force-mem-access 1' command is executed.
+21:40:58 INFO  : Context for 'APU' is selected.
+21:40:58 INFO  : 'stop' command is executed.
+21:40:58 INFO  : 'ps7_init' command is executed.
+21:40:58 INFO  : 'ps7_post_config' command is executed.
+21:40:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:40:58 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:40:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:40:58 INFO  : The application 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:40:58 INFO  : 'configparams force-mem-access 0' command is executed.
+21:40:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+loadhw -hw C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+dow C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:40:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:40:58 INFO  : 'con' command is executed.
+21:40:58 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+con
+----------------End of Script----------------
+
+21:40:58 INFO  : Disconnected from the channel tcfchan#3.
+21:43:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248530849" && level==0} -index 1' command is executed.
+21:43:03 INFO  : 'fpga -state' command is executed.
+21:43:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:43:03 INFO  : Jtag cable 'Digilent Zed 210248530849' is selected.
+21:43:03 INFO  : 'jtag frequency' command is executed.
+21:43:03 INFO  : Sourcing of 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:43:03 INFO  : Context for 'APU' is selected.
+21:43:03 INFO  : Hardware design information is loaded from 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+21:43:03 INFO  : 'configparams force-mem-access 1' command is executed.
+21:43:03 INFO  : Context for 'APU' is selected.
+21:43:03 INFO  : 'stop' command is executed.
+21:43:03 INFO  : 'ps7_init' command is executed.
+21:43:03 INFO  : 'ps7_post_config' command is executed.
+21:43:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:43:03 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:43:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:43:04 INFO  : The application 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:43:04 INFO  : 'configparams force-mem-access 0' command is executed.
+21:43:04 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+loadhw -hw C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+dow C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:43:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:43:04 INFO  : 'con' command is executed.
+21:43:04 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+con
+----------------End of Script----------------
+
+21:43:04 INFO  : Disconnected from the channel tcfchan#4.
+21:44:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248530849" && level==0} -index 1' command is executed.
+21:44:02 INFO  : 'fpga -state' command is executed.
+21:44:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:44:02 INFO  : Jtag cable 'Digilent Zed 210248530849' is selected.
+21:44:02 INFO  : 'jtag frequency' command is executed.
+21:44:02 INFO  : Sourcing of 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:44:02 INFO  : Context for 'APU' is selected.
+21:44:02 INFO  : Hardware design information is loaded from 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+21:44:02 INFO  : 'configparams force-mem-access 1' command is executed.
+21:44:02 INFO  : Context for 'APU' is selected.
+21:44:02 INFO  : 'stop' command is executed.
+21:44:02 INFO  : 'ps7_init' command is executed.
+21:44:02 INFO  : 'ps7_post_config' command is executed.
+21:44:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:44:02 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:44:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:44:03 INFO  : The application 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:44:03 INFO  : 'configparams force-mem-access 0' command is executed.
+21:44:03 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+loadhw -hw C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+dow C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:44:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:44:03 INFO  : 'con' command is executed.
+21:44:03 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+con
+----------------End of Script----------------
+
+21:44:03 INFO  : Disconnected from the channel tcfchan#5.
+21:44:20 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248530849" && level==0} -index 1' command is executed.
+21:44:20 INFO  : 'fpga -state' command is executed.
+21:44:20 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:44:20 INFO  : Jtag cable 'Digilent Zed 210248530849' is selected.
+21:44:20 INFO  : 'jtag frequency' command is executed.
+21:44:20 INFO  : Sourcing of 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:44:20 INFO  : Context for 'APU' is selected.
+21:44:20 INFO  : Hardware design information is loaded from 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+21:44:20 INFO  : 'configparams force-mem-access 1' command is executed.
+21:44:20 INFO  : Context for 'APU' is selected.
+21:44:20 INFO  : 'stop' command is executed.
+21:44:21 INFO  : 'ps7_init' command is executed.
+21:44:21 INFO  : 'ps7_post_config' command is executed.
+21:44:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:44:21 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:44:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:44:21 INFO  : The application 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:44:21 INFO  : 'configparams force-mem-access 0' command is executed.
+21:44:21 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+loadhw -hw C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+dow C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:44:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:44:21 INFO  : 'con' command is executed.
+21:44:21 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+con
+----------------End of Script----------------
+
+21:44:21 INFO  : Disconnected from the channel tcfchan#6.
+21:57:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248530849" && level==0} -index 1' command is executed.
+21:57:19 INFO  : 'fpga -state' command is executed.
+21:57:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:57:19 INFO  : Jtag cable 'Digilent Zed 210248530849' is selected.
+21:57:19 INFO  : 'jtag frequency' command is executed.
+21:57:19 INFO  : Sourcing of 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:57:19 INFO  : Context for 'APU' is selected.
+21:57:19 INFO  : Hardware design information is loaded from 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+21:57:19 INFO  : 'configparams force-mem-access 1' command is executed.
+21:57:19 INFO  : Context for 'APU' is selected.
+21:57:19 INFO  : 'stop' command is executed.
+21:57:19 INFO  : 'ps7_init' command is executed.
+21:57:19 INFO  : 'ps7_post_config' command is executed.
+21:57:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:57:19 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:57:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:57:19 INFO  : The application 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:57:19 INFO  : 'configparams force-mem-access 0' command is executed.
+21:57:19 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+loadhw -hw C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+dow C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:57:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:57:20 INFO  : 'con' command is executed.
+21:57:20 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+con
+----------------End of Script----------------
+
+21:57:20 INFO  : Disconnected from the channel tcfchan#7.
+21:58:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248530849" && level==0} -index 1' command is executed.
+21:58:36 INFO  : 'fpga -state' command is executed.
+21:58:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:58:36 INFO  : Jtag cable 'Digilent Zed 210248530849' is selected.
+21:58:36 INFO  : 'jtag frequency' command is executed.
+21:58:36 INFO  : Sourcing of 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:58:36 INFO  : Context for 'APU' is selected.
+21:58:36 INFO  : Hardware design information is loaded from 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+21:58:36 INFO  : 'configparams force-mem-access 1' command is executed.
+21:58:36 INFO  : Context for 'APU' is selected.
+21:58:36 INFO  : 'stop' command is executed.
+21:58:37 INFO  : 'ps7_init' command is executed.
+21:58:37 INFO  : 'ps7_post_config' command is executed.
+21:58:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:58:37 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:58:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:58:37 INFO  : The application 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:58:37 INFO  : 'configparams force-mem-access 0' command is executed.
+21:58:37 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+loadhw -hw C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+dow C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:58:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:58:37 INFO  : 'con' command is executed.
+21:58:37 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+con
+----------------End of Script----------------
+
+21:58:37 INFO  : Disconnected from the channel tcfchan#8.
+22:01:46 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248530849" && level==0} -index 1' command is executed.
+22:01:46 INFO  : 'fpga -state' command is executed.
+22:01:46 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:01:46 INFO  : Jtag cable 'Digilent Zed 210248530849' is selected.
+22:01:46 INFO  : 'jtag frequency' command is executed.
+22:01:46 INFO  : Sourcing of 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:01:46 INFO  : Context for 'APU' is selected.
+22:01:46 INFO  : Hardware design information is loaded from 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+22:01:46 INFO  : 'configparams force-mem-access 1' command is executed.
+22:01:46 INFO  : Context for 'APU' is selected.
+22:01:47 INFO  : 'stop' command is executed.
+22:01:47 INFO  : 'ps7_init' command is executed.
+22:01:47 INFO  : 'ps7_post_config' command is executed.
+22:01:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:01:47 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+22:01:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:01:47 INFO  : The application 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:01:47 INFO  : 'configparams force-mem-access 0' command is executed.
+22:01:47 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+loadhw -hw C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+dow C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:01:47 INFO  : Memory regions updated for context APU
+22:01:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:01:47 INFO  : 'con' command is executed.
+22:01:47 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+con
+----------------End of Script----------------
+
+22:01:47 INFO  : Launch script is exported to file 'C:\Users\Public\VerilogBoy-Zedboard\VivadoProject\ip_repo\VerilogBoy-Zedboard-PS-PL\VerilogBoy-Zedboard-PS-PL.sdk\.sdk\launch_scripts\performance_analysis\performance_analysis_using_debug_test_verilog_boy.elf_on_local.tcl'
+22:01:48 INFO  : Apm configuration has been updated and stored to 'C:\Users\Public\VerilogBoy-Zedboard\VivadoProject\ip_repo\VerilogBoy-Zedboard-PS-PL\VerilogBoy-Zedboard-PS-PL.sdk\design_1_wrapper_hw_platform_0\apmconfigs\apm_default.json' for the project 'design_1_wrapper_hw_platform_0'
+22:01:48 INFO  : Performance data for 'PS' will be exported to the file 'C:\Users\Public\VerilogBoy-Zedboard\VivadoProject\ip_repo\VerilogBoy-Zedboard-PS-PL\VerilogBoy-Zedboard-PS-PL.sdk\design_1_wrapper_hw_platform_0_Traces\Traces\Run_七月-14_22-01\PS_Trace_七月-14_22-01\trace'
+22:01:48 INFO  : Created tracing project 'design_1_wrapper_hw_platform_0_Traces'
+22:01:48 INFO  : Added tracing folder 'C:\Users\Public\VerilogBoy-Zedboard\VivadoProject\ip_repo\VerilogBoy-Zedboard-PS-PL\VerilogBoy-Zedboard-PS-PL.sdk\design_1_wrapper_hw_platform_0_Traces\Traces\Run_七月-14_22-01\PS_Trace_七月-14_22-01' into  'design_1_wrapper_hw_platform_0_Traces'
+22:01:48 INFO  : Attempting to open tracing file 'PS_Trace_七月-14_22-01'
+22:02:15 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248530849" && level==0} -index 1' command is executed.
+22:02:15 INFO  : 'fpga -state' command is executed.
+22:02:15 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:02:15 INFO  : Jtag cable 'Digilent Zed 210248530849' is selected.
+22:02:15 INFO  : 'jtag frequency' command is executed.
+22:02:15 INFO  : Sourcing of 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:02:15 INFO  : Context for 'APU' is selected.
+22:02:15 INFO  : Hardware design information is loaded from 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+22:02:15 INFO  : 'configparams force-mem-access 1' command is executed.
+22:02:15 INFO  : Context for 'APU' is selected.
+22:02:15 INFO  : 'stop' command is executed.
+22:02:15 INFO  : 'ps7_init' command is executed.
+22:02:15 INFO  : 'ps7_post_config' command is executed.
+22:02:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:02:15 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+22:02:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:02:15 INFO  : The application 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:02:15 INFO  : 'configparams force-mem-access 0' command is executed.
+22:02:15 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+loadhw -hw C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+dow C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:02:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:02:15 INFO  : 'con' command is executed.
+22:02:15 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+con
+----------------End of Script----------------
+
+22:02:15 INFO  : Disconnected from the channel tcfchan#9.
+22:02:58 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248530849" && level==0} -index 1' command is executed.
+22:02:58 INFO  : 'fpga -state' command is executed.
+22:02:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:02:58 INFO  : Jtag cable 'Digilent Zed 210248530849' is selected.
+22:02:58 INFO  : 'jtag frequency' command is executed.
+22:02:58 INFO  : Sourcing of 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:02:58 INFO  : Context for 'APU' is selected.
+22:02:58 INFO  : Hardware design information is loaded from 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+22:02:58 INFO  : 'configparams force-mem-access 1' command is executed.
+22:02:58 INFO  : Context for 'APU' is selected.
+22:02:58 INFO  : 'stop' command is executed.
+22:02:58 INFO  : 'ps7_init' command is executed.
+22:02:58 INFO  : 'ps7_post_config' command is executed.
+22:02:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:02:58 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+22:02:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:02:59 INFO  : The application 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:02:59 INFO  : 'configparams force-mem-access 0' command is executed.
+22:02:59 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+loadhw -hw C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+dow C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:02:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:02:59 INFO  : 'con' command is executed.
+22:02:59 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+con
+----------------End of Script----------------
+
+22:02:59 INFO  : Disconnected from the channel tcfchan#10.
+22:06:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248530849" && level==0} -index 1' command is executed.
+22:06:21 INFO  : 'fpga -state' command is executed.
+22:06:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:06:21 INFO  : Jtag cable 'Digilent Zed 210248530849' is selected.
+22:06:21 INFO  : 'jtag frequency' command is executed.
+22:06:21 INFO  : Sourcing of 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:06:21 INFO  : Context for 'APU' is selected.
+22:06:21 INFO  : Hardware design information is loaded from 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+22:06:21 INFO  : 'configparams force-mem-access 1' command is executed.
+22:06:21 INFO  : Context for 'APU' is selected.
+22:06:21 INFO  : 'stop' command is executed.
+22:06:21 INFO  : 'ps7_init' command is executed.
+22:06:21 INFO  : 'ps7_post_config' command is executed.
+22:06:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:06:21 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+22:06:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:06:21 INFO  : The application 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:06:21 INFO  : 'configparams force-mem-access 0' command is executed.
+22:06:21 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+loadhw -hw C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+dow C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:07:05 INFO  : Disconnected from the channel tcfchan#11.
+22:11:48 INFO  : Performance data for 'PS' has been exported to the file 'C:\Users\Public\VerilogBoy-Zedboard\VivadoProject\ip_repo\VerilogBoy-Zedboard-PS-PL\VerilogBoy-Zedboard-PS-PL.sdk\design_1_wrapper_hw_platform_0_Traces\Traces\Run_七月-14_22-01\PS_Trace_七月-14_22-01\trace'
+22:25:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248530849" && level==0} -index 1' command is executed.
+22:25:22 INFO  : 'fpga -state' command is executed.
+22:25:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:25:22 INFO  : Jtag cable 'Digilent Zed 210248530849' is selected.
+22:25:22 INFO  : 'jtag frequency' command is executed.
+22:25:22 INFO  : Sourcing of 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:25:22 INFO  : Context for 'APU' is selected.
+22:25:22 INFO  : Hardware design information is loaded from 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+22:25:22 INFO  : 'configparams force-mem-access 1' command is executed.
+22:25:22 INFO  : Context for 'APU' is selected.
+22:25:22 INFO  : 'stop' command is executed.
+22:25:23 INFO  : 'ps7_init' command is executed.
+22:25:23 INFO  : 'ps7_post_config' command is executed.
+22:25:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:25:23 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+22:25:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:25:23 INFO  : The application 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:25:23 INFO  : 'configparams force-mem-access 0' command is executed.
+22:25:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+loadhw -hw C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+dow C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:25:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:25:23 INFO  : 'con' command is executed.
+22:25:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+con
+----------------End of Script----------------
+
+22:25:23 INFO  : Disconnected from the channel tcfchan#12.
+22:26:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248530849" && level==0} -index 1' command is executed.
+22:26:48 INFO  : 'fpga -state' command is executed.
+22:26:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:26:48 INFO  : Jtag cable 'Digilent Zed 210248530849' is selected.
+22:26:48 INFO  : 'jtag frequency' command is executed.
+22:26:48 INFO  : Sourcing of 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:26:48 INFO  : Context for 'APU' is selected.
+22:26:48 INFO  : Hardware design information is loaded from 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+22:26:48 INFO  : 'configparams force-mem-access 1' command is executed.
+22:26:49 INFO  : Context for 'APU' is selected.
+22:26:49 INFO  : 'stop' command is executed.
+22:26:49 INFO  : 'ps7_init' command is executed.
+22:26:49 INFO  : 'ps7_post_config' command is executed.
+22:26:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:26:49 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+22:26:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:26:49 INFO  : The application 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:26:49 INFO  : 'configparams force-mem-access 0' command is executed.
+22:26:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+loadhw -hw C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+dow C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:26:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:26:49 INFO  : 'con' command is executed.
+22:26:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+con
+----------------End of Script----------------
+
+22:26:49 INFO  : Disconnected from the channel tcfchan#13.
+22:28:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248530849" && level==0} -index 1' command is executed.
+22:28:17 INFO  : 'fpga -state' command is executed.
+22:28:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:28:17 INFO  : Jtag cable 'Digilent Zed 210248530849' is selected.
+22:28:17 INFO  : 'jtag frequency' command is executed.
+22:28:17 INFO  : Sourcing of 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:28:17 INFO  : Context for 'APU' is selected.
+22:28:17 INFO  : Hardware design information is loaded from 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+22:28:17 INFO  : 'configparams force-mem-access 1' command is executed.
+22:28:17 INFO  : Context for 'APU' is selected.
+22:28:17 INFO  : 'stop' command is executed.
+22:28:17 INFO  : 'ps7_init' command is executed.
+22:28:17 INFO  : 'ps7_post_config' command is executed.
+22:28:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:28:17 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+22:28:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:28:17 INFO  : The application 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:28:17 INFO  : 'configparams force-mem-access 0' command is executed.
+22:28:17 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+loadhw -hw C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+dow C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:28:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:28:17 INFO  : 'con' command is executed.
+22:28:17 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+con
+----------------End of Script----------------
+
+22:28:17 INFO  : Disconnected from the channel tcfchan#14.
+22:36:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248530849" && level==0} -index 1' command is executed.
+22:36:30 INFO  : 'fpga -state' command is executed.
+22:36:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:36:30 INFO  : Jtag cable 'Digilent Zed 210248530849' is selected.
+22:36:30 INFO  : 'jtag frequency' command is executed.
+22:36:30 INFO  : Sourcing of 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:36:30 INFO  : Context for 'APU' is selected.
+22:36:30 INFO  : Hardware design information is loaded from 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+22:36:30 INFO  : 'configparams force-mem-access 1' command is executed.
+22:36:30 INFO  : Context for 'APU' is selected.
+22:36:30 INFO  : 'stop' command is executed.
+22:36:30 INFO  : 'ps7_init' command is executed.
+22:36:30 INFO  : 'ps7_post_config' command is executed.
+22:36:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:36:30 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+22:36:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:36:30 INFO  : The application 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:36:30 INFO  : 'configparams force-mem-access 0' command is executed.
+22:36:30 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+loadhw -hw C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+dow C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:36:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:36:30 INFO  : 'con' command is executed.
+22:36:30 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+con
+----------------End of Script----------------
+
+22:36:30 INFO  : Disconnected from the channel tcfchan#15.
+22:38:49 INFO  : Refreshed build settings on project test_verilog_boy
+22:39:12 INFO  : No changes in MSS file content so not generating sources.
+23:04:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248530849" && level==0} -index 1' command is executed.
+23:04:27 INFO  : 'fpga -state' command is executed.
+23:04:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:04:27 INFO  : Jtag cable 'Digilent Zed 210248530849' is selected.
+23:04:27 INFO  : 'jtag frequency' command is executed.
+23:04:27 INFO  : Sourcing of 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+23:04:27 INFO  : Context for 'APU' is selected.
+23:04:27 INFO  : Hardware design information is loaded from 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+23:04:27 INFO  : 'configparams force-mem-access 1' command is executed.
+23:04:27 INFO  : Context for 'APU' is selected.
+23:04:27 INFO  : 'stop' command is executed.
+23:04:28 INFO  : 'ps7_init' command is executed.
+23:04:28 INFO  : 'ps7_post_config' command is executed.
+23:04:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:04:28 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+23:04:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:04:28 INFO  : The application 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf' is downloaded to processor 'ps7_cortexa9_0'.
+23:04:28 INFO  : 'configparams force-mem-access 0' command is executed.
+23:04:28 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+loadhw -hw C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+dow C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+23:04:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:04:28 INFO  : 'con' command is executed.
+23:04:28 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+con
+----------------End of Script----------------
+
+23:04:28 INFO  : Disconnected from the channel tcfchan#16.
+23:05:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248530849" && level==0} -index 1' command is executed.
+23:05:42 INFO  : 'fpga -state' command is executed.
+23:05:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:05:42 INFO  : Jtag cable 'Digilent Zed 210248530849' is selected.
+23:05:42 INFO  : 'jtag frequency' command is executed.
+23:05:42 INFO  : Sourcing of 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+23:05:42 INFO  : Context for 'APU' is selected.
+23:05:43 INFO  : Hardware design information is loaded from 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+23:05:43 INFO  : 'configparams force-mem-access 1' command is executed.
+23:05:43 INFO  : Context for 'APU' is selected.
+23:05:43 INFO  : 'stop' command is executed.
+23:05:44 INFO  : 'ps7_init' command is executed.
+23:05:44 INFO  : 'ps7_post_config' command is executed.
+23:05:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:05:44 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+23:05:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:05:44 INFO  : The application 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf' is downloaded to processor 'ps7_cortexa9_0'.
+23:05:44 INFO  : 'configparams force-mem-access 0' command is executed.
+23:05:44 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+loadhw -hw C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+dow C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+23:05:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:05:44 INFO  : 'con' command is executed.
+23:05:44 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+con
+----------------End of Script----------------
+
+23:05:44 INFO  : Disconnected from the channel tcfchan#17.
+23:08:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248530849" && level==0} -index 1' command is executed.
+23:08:03 INFO  : 'fpga -state' command is executed.
+23:08:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:08:03 INFO  : Jtag cable 'Digilent Zed 210248530849' is selected.
+23:08:03 INFO  : 'jtag frequency' command is executed.
+23:08:03 INFO  : Sourcing of 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+23:08:03 INFO  : Context for 'APU' is selected.
+23:08:04 INFO  : Hardware design information is loaded from 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+23:08:04 INFO  : 'configparams force-mem-access 1' command is executed.
+23:08:04 INFO  : Context for 'APU' is selected.
+23:08:04 INFO  : 'stop' command is executed.
+23:08:05 INFO  : 'ps7_init' command is executed.
+23:08:05 INFO  : 'ps7_post_config' command is executed.
+23:08:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:08:05 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+23:08:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:08:05 INFO  : The application 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf' is downloaded to processor 'ps7_cortexa9_0'.
+23:08:05 INFO  : 'configparams force-mem-access 0' command is executed.
+23:08:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+loadhw -hw C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+dow C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+23:08:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:08:05 INFO  : 'con' command is executed.
+23:08:05 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+con
+----------------End of Script----------------
+
+23:08:05 INFO  : Disconnected from the channel tcfchan#18.
+23:14:06 INFO  : Performance data for 'PS' has been exported to the file 'C:\Users\Public\VerilogBoy-Zedboard\VivadoProject\ip_repo\VerilogBoy-Zedboard-PS-PL\VerilogBoy-Zedboard-PS-PL.sdk\design_1_wrapper_hw_platform_0_Traces\Traces\Run_七月-14_22-01\PS_Trace_七月-14_22-01\trace'
+23:14:06 WARN  : channel "tcfchan#9" closed
+05:46:22 INFO  : Registering command handlers for SDK TCF services
+05:46:22 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\Public\VerilogBoy-Zedboard\VivadoProject\ip_repo\VerilogBoy-Zedboard-PS-PL\VerilogBoy-Zedboard-PS-PL.sdk\temp_xsdb_launch_script.tcl
+05:46:24 INFO  : XSCT server has started successfully.
+05:46:24 INFO  : Successfully done setting XSCT server connection channel  
+05:46:25 INFO  : Successfully done setting SDK workspace  
+05:46:25 INFO  : Processing command line option -hwspec C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper.hdf.
+05:46:25 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+06:02:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248530849" && level==0} -index 1' command is executed.
+06:02:30 INFO  : 'fpga -state' command is executed.
+06:03:33 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248530849" && level==0} -index 1' command is executed.
+06:03:33 INFO  : 'fpga -state' command is executed.
+06:03:33 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+06:03:33 INFO  : Jtag cable 'Digilent Zed 210248530849' is selected.
+06:03:33 INFO  : 'jtag frequency' command is executed.
+06:03:33 INFO  : Sourcing of 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+06:03:33 INFO  : Context for 'APU' is selected.
+06:03:33 INFO  : Hardware design information is loaded from 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+06:03:33 INFO  : 'configparams force-mem-access 1' command is executed.
+06:03:33 INFO  : Context for 'APU' is selected.
+06:03:33 INFO  : 'stop' command is executed.
+06:03:33 INFO  : 'ps7_init' command is executed.
+06:03:33 INFO  : 'ps7_post_config' command is executed.
+06:03:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+06:03:34 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+06:03:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+06:03:34 INFO  : The application 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf' is downloaded to processor 'ps7_cortexa9_0'.
+06:03:34 INFO  : 'configparams force-mem-access 0' command is executed.
+06:03:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+loadhw -hw C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+dow C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+06:03:34 INFO  : Memory regions updated for context APU
+06:03:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+06:03:34 INFO  : 'con' command is executed.
+06:03:34 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+con
+----------------End of Script----------------
+
+06:03:34 INFO  : Launch script is exported to file 'C:\Users\Public\VerilogBoy-Zedboard\VivadoProject\ip_repo\VerilogBoy-Zedboard-PS-PL\VerilogBoy-Zedboard-PS-PL.sdk\.sdk\launch_scripts\performance_analysis\performance_analysis_using_debug_test_verilog_boy.elf_on_local.tcl'
+06:03:35 INFO  : Performance data for 'PS' will be exported to the file 'C:\Users\Public\VerilogBoy-Zedboard\VivadoProject\ip_repo\VerilogBoy-Zedboard-PS-PL\VerilogBoy-Zedboard-PS-PL.sdk\design_1_wrapper_hw_platform_0_Traces\Traces\Run_七月-15_06-03\PS_Trace_七月-15_06-03\trace'
+06:03:35 INFO  : Added tracing folder 'C:\Users\Public\VerilogBoy-Zedboard\VivadoProject\ip_repo\VerilogBoy-Zedboard-PS-PL\VerilogBoy-Zedboard-PS-PL.sdk\design_1_wrapper_hw_platform_0_Traces\Traces\Run_七月-15_06-03\PS_Trace_七月-15_06-03' into  'design_1_wrapper_hw_platform_0_Traces'
+06:03:35 INFO  : Attempting to open tracing file 'PS_Trace_七月-15_06-03'
+06:07:34 INFO  : Performance data for 'PS' has been exported to the file 'C:\Users\Public\VerilogBoy-Zedboard\VivadoProject\ip_repo\VerilogBoy-Zedboard-PS-PL\VerilogBoy-Zedboard-PS-PL.sdk\design_1_wrapper_hw_platform_0_Traces\Traces\Run_七月-15_06-03\PS_Trace_七月-15_06-03\trace'
+06:07:34 INFO  : Disconnected from the channel tcfchan#1.
+06:16:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248530849" && level==0} -index 1' command is executed.
+06:16:17 INFO  : 'fpga -state' command is executed.
+06:16:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+06:16:17 INFO  : Jtag cable 'Digilent Zed 210248530849' is selected.
+06:16:17 INFO  : 'jtag frequency' command is executed.
+06:16:17 INFO  : Sourcing of 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+06:16:17 INFO  : Context for 'APU' is selected.
+06:16:19 INFO  : Hardware design information is loaded from 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+06:16:19 INFO  : 'configparams force-mem-access 1' command is executed.
+06:16:19 INFO  : Context for 'APU' is selected.
+06:16:19 INFO  : 'stop' command is executed.
+06:16:19 INFO  : 'ps7_init' command is executed.
+06:16:19 INFO  : 'ps7_post_config' command is executed.
+06:16:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+06:16:19 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+06:16:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+06:16:19 INFO  : The application 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf' is downloaded to processor 'ps7_cortexa9_0'.
+06:16:19 INFO  : 'configparams force-mem-access 0' command is executed.
+06:16:19 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+loadhw -hw C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+dow C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+06:16:20 INFO  : Memory regions updated for context APU
+06:16:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+06:16:20 INFO  : 'con' command is executed.
+06:16:20 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+con
+----------------End of Script----------------
+
+06:16:20 INFO  : Launch script is exported to file 'C:\Users\Public\VerilogBoy-Zedboard\VivadoProject\ip_repo\VerilogBoy-Zedboard-PS-PL\VerilogBoy-Zedboard-PS-PL.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_test_verilog_boy.elf_on_local.tcl'
+06:46:19 INFO  : Invoking Bootgen: bootgen -image fsbl.bif -arch zynq -o C:\Users\Public\VerilogBoy-Zedboard\VivadoProject\ip_repo\VerilogBoy-Zedboard-PS-PL\VerilogBoy-Zedboard-PS-PL.sdk\fsbl\bootimage\BOOT.bin
+06:46:19 INFO  : Creating new bif file C:\Users\Public\VerilogBoy-Zedboard\VivadoProject\ip_repo\VerilogBoy-Zedboard-PS-PL\VerilogBoy-Zedboard-PS-PL.sdk\fsbl\bootimage\fsbl.bif
+06:46:20 INFO  : Bootgen command execution is done.
+06:52:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248530849" && level==0} -index 1' command is executed.
+06:52:27 INFO  : 'fpga -state' command is executed.
+06:52:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+06:52:27 INFO  : Jtag cable 'Digilent Zed 210248530849' is selected.
+06:52:27 INFO  : 'jtag frequency' command is executed.
+06:52:27 INFO  : Sourcing of 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+06:52:27 INFO  : Context for 'APU' is selected.
+06:52:27 INFO  : Hardware design information is loaded from 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+06:52:27 INFO  : 'configparams force-mem-access 1' command is executed.
+06:52:27 INFO  : Context for 'APU' is selected.
+06:52:28 INFO  : 'stop' command is executed.
+06:52:28 INFO  : 'ps7_init' command is executed.
+06:52:28 INFO  : 'ps7_post_config' command is executed.
+06:52:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+06:52:28 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+06:52:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+06:52:28 INFO  : The application 'C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf' is downloaded to processor 'ps7_cortexa9_0'.
+06:52:28 INFO  : 'configparams force-mem-access 0' command is executed.
+06:52:28 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+loadhw -hw C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+dow C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/test_verilog_boy/Debug/test_verilog_boy.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+06:52:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+06:52:28 INFO  : 'con' command is executed.
+06:52:28 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248530849"} -index 0
+con
+----------------End of Script----------------
+
+06:52:28 INFO  : Disconnected from the channel tcfchan#2.
+06:54:45 WARN  : channel "tcfchan#2" closed
+06:55:44 INFO  : Registering command handlers for SDK TCF services
+06:55:44 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\Public\VerilogBoy-Zedboard\VivadoProject\ip_repo\VerilogBoy-Zedboard-PS-PL\VerilogBoy-Zedboard-PS-PL.sdk\temp_xsdb_launch_script.tcl
+06:55:46 INFO  : XSCT server has started successfully.
+06:55:46 INFO  : Successfully done setting XSCT server connection channel  
+06:55:46 INFO  : Successfully done setting SDK workspace  
+06:55:46 INFO  : Processing command line option -hwspec C:/Users/Public/VerilogBoy-Zedboard/VivadoProject/ip_repo/VerilogBoy-Zedboard-PS-PL/VerilogBoy-Zedboard-PS-PL.sdk/design_1_wrapper.hdf.
+06:55:46 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+06:55:57 INFO  : Invoking Bootgen: bootgen -image fsbl.bif -arch zynq -o C:\Users\Public\VerilogBoy-Zedboard\VivadoProject\ip_repo\VerilogBoy-Zedboard-PS-PL\VerilogBoy-Zedboard-PS-PL.sdk\fsbl\bootimage\BOOT.bin
+06:55:57 INFO  : Creating new bif file C:\Users\Public\VerilogBoy-Zedboard\VivadoProject\ip_repo\VerilogBoy-Zedboard-PS-PL\VerilogBoy-Zedboard-PS-PL.sdk\fsbl\bootimage\fsbl.bif
+06:55:58 INFO  : Bootgen command execution is done.
+07:03:16 INFO  : Invoking Bootgen: bootgen -image output.bif -arch zynq -o C:\Users\Tom\Desktop\BOOT.bin -w on
+07:03:16 INFO  : Creating new bif file C:\Users\Tom\Desktop\output.bif
+07:03:17 INFO  : Bootgen command execution is done.
+07:06:23 INFO  : Invoking Bootgen: bootgen -image fsbl.bif -arch zynq -o C:\Users\Public\VerilogBoy-Zedboard\VivadoProject\ip_repo\VerilogBoy-Zedboard-PS-PL\VerilogBoy-Zedboard-PS-PL.sdk\fsbl\bootimage\BOOT.bin -w on
+07:06:23 INFO  : Overwriting existing bif file C:\Users\Public\VerilogBoy-Zedboard\VivadoProject\ip_repo\VerilogBoy-Zedboard-PS-PL\VerilogBoy-Zedboard-PS-PL.sdk\fsbl\bootimage\fsbl.bif
+07:06:24 INFO  : Bootgen command execution is done.
+07:07:28 INFO  : Invoking Bootgen: bootgen -image fsbl.bif -arch zynq -o C:\Users\Public\VerilogBoy-Zedboard\VivadoProject\ip_repo\VerilogBoy-Zedboard-PS-PL\VerilogBoy-Zedboard-PS-PL.sdk\fsbl\bootimage\BOOT.bin -w on
+07:07:29 INFO  : Bootgen command execution is done.
+07:08:22 INFO  : Invoking Bootgen: bootgen -image fsbl.bif -arch zynq -o C:\Users\Public\VerilogBoy-Zedboard\VivadoProject\ip_repo\VerilogBoy-Zedboard-PS-PL\VerilogBoy-Zedboard-PS-PL.sdk\fsbl\bootimage\BOOT.bin -w on
+07:08:23 INFO  : Bootgen command execution is done.
+07:11:22 INFO  : Invoking Bootgen: bootgen -image fsbl.bif -arch zynq -o C:\Users\Public\VerilogBoy-Zedboard\VivadoProject\ip_repo\VerilogBoy-Zedboard-PS-PL\VerilogBoy-Zedboard-PS-PL.sdk\fsbl\bootimage\BOOT.bin -w on
+07:11:22 INFO  : Overwriting existing bif file C:\Users\Public\VerilogBoy-Zedboard\VivadoProject\ip_repo\VerilogBoy-Zedboard-PS-PL\VerilogBoy-Zedboard-PS-PL.sdk\fsbl\bootimage\fsbl.bif
+07:11:23 INFO  : Bootgen command execution is done.
+07:16:21 INFO  : Invoking Bootgen: bootgen -image fsbl.bif -arch zynq -o C:\Users\Public\VerilogBoy-Zedboard\VivadoProject\ip_repo\VerilogBoy-Zedboard-PS-PL\VerilogBoy-Zedboard-PS-PL.sdk\fsbl\bootimage\BOOT.bin -w on
+07:16:21 INFO  : Overwriting existing bif file C:\Users\Public\VerilogBoy-Zedboard\VivadoProject\ip_repo\VerilogBoy-Zedboard-PS-PL\VerilogBoy-Zedboard-PS-PL.sdk\fsbl\bootimage\fsbl.bif
+07:16:22 INFO  : Bootgen command execution is done.
